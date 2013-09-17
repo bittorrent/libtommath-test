@@ -4,7 +4,8 @@ lib tommath : [ glob-tree *.c : .git mpi.c ]
 	<include>.
 	# work-around a bug in the clang toolset
 	# it uses the c++ compiler to build C code
-	<cxxflags>-std=c89
+	<toolset>clang:<cxxflags>-std=c99
+	<toolset>gcc:<cxxflags>-std=c99
 	: # default build
 	<link>static
 	: # usage requirements
